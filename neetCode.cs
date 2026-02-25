@@ -40,4 +40,23 @@ public class Solution {
 
         return k;
     }
+
+
+
+    // from now on we are going to use white board to think first
+    // then we can code the solution starting from this method below:
+    public int[] GetConcatenation(int[] nums) {
+        int n = nums.Length;
+        int k = n;
+        var ans = new int[n*2];
+
+        for(var i = 0; i < n; i++){
+            var number = nums[i];
+            ans[i] = number;
+            ans[k] = number;
+            k++;
+        }
+
+        return ans;
+    }
 }
