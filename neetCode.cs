@@ -43,6 +43,7 @@ public class Solution {
 
 
 
+    // GetConcatenation of arrays
     // from now on we are going to use white board to think first
     // then we can code the solution starting from this method below:
     public int[] GetConcatenation(int[] nums) {
@@ -59,4 +60,22 @@ public class Solution {
 
         return ans;
     }
+
+ 
+ 
+
+
+    // Valid Parenthesis:
+    public bool IsValid(string s) {
+    }
+
+
+
+
+
+
+
+
+
+
 }
