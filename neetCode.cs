@@ -1,17 +1,29 @@
 public class Arrays {
 
-    public int[] GetConcatenation(int[] nums) {
-        var n = nums.Length;
-        var ansLength = n * 2;
-        var ans = new int[ansLength];
+    public int[] TwoSum(int[] nums, int target) {
+        // hasMap to store our current number as the key
+        // and the index as the value (because we are interested in the indeces as the return values)
+        var hashMap = new Dictionary<int, int>();
 
-        for(int i = 0; i < nums.Length; i++){
-            var currentNumber = nums[i];
-            ans[i] = currentNumber;
-            ans[i + n] = currentNumber;
+        for(var i = 0; i < nums.Length; i++){
+            var currentIndex = i;
+            var currentNum = nums[currentIndex];
+
+            var difference = target - currentNum;
+            // check if our hashMap has the difference (the number that sums up to target with our current number)
+            var containsMissingNumber = hashMap.ContainsKey(difference);
+            if(containsMissingNumber){
+                return [currentIndex, hashMap[difference]];
+
+            } else{
+                hashMap[currentNum] = currentIndex;
+            }
         }
 
-        return ans;
+        return []; // returning and empty array incase it doesn't find a match
+    }
+
+    public int[] GetConcatenation(int[] nums) {
     }
 }
 

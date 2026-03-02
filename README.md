@@ -8,6 +8,15 @@
 
 ![Concatenation of Array](solutionDiagrams/Concatenation_of_Array.png)
 
+<h1>Two Sum</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-ArrayHashing-indigo" />
+  <img src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![Two Sum](solutionDiagrams/TwoSum.png)
 
 <h1>Valid Parenthesis</h1>
 
