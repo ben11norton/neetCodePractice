@@ -1,29 +1,27 @@
-public class Solution {
-    // Min Stack
-    // work through the solutions below with white board and check off on notion
-    // then create a new class called min stack and solve the above
- 
-    // Valid Parenthesis:
-    public bool IsValid(string s) {
-    }
-
-
-    public int RemoveDuplicates(int[] nums) {
-    }
-
+public class Arrays {
 
     public int[] GetConcatenation(int[] nums) {
-        int n = nums.Length;
-        int k = n;
-        var ans = new int[n*2];
+        var n = nums.Length;
+        var ansLength = n * 2;
+        var ans = new int[ansLength];
 
-        for(var i = 0; i < n; i++){
-            var number = nums[i];
-            ans[i] = number;
-            ans[k] = number;
-            k++;
+        for(int i = 0; i < nums.Length; i++){
+            var currentNumber = nums[i];
+            ans[i] = currentNumber;
+            ans[i + n] = currentNumber;
         }
 
         return ans;
     }
+}
+
+public class HashingArrays {
+}
+
+
+public class ArrayTwoPointers {
+}
+
+
+public class Stacks {
 }
