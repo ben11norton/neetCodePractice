@@ -18,6 +18,16 @@
 
 ![Two Sum](solutionDiagrams/TwoSum.png)
 
+<h1>Remove duplicates from sorted array</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-ArrayTwoPointers-orange" />
+  <img src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![RemoveDuplicates_FromAssortedArray](solutionDiagrams/RemoveDuplicates_FromAssortedArray.png)
+
 <h1>Valid Parenthesis</h1>
 
 <p>

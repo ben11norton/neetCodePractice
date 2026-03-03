@@ -1,8 +1,25 @@
 public class Arrays {
 
-    // 1. solve again on white board
-    // then submit the code
+    // Time Complexity: O(n) — single linear pass.
+    // Space Complexity: O(1) — in-place modification with constant extra memory.
+
     public int RemoveDuplicates(int[] nums) {
+        int k = 1; // our uniqueElementIndexPointer
+
+        for(var i = 1; i < nums.Length; i++){
+            var currentNumber = nums[i];
+            var previousNumber = nums[i - 1];
+
+            var isUniqueNumber = currentNumber != previousNumber;
+
+            if(isUniqueNumber){
+                var uniqueNumberIndex = k;
+                nums[uniqueNumberIndex] = currentNumber;
+                k++;
+            }
+        }
+
+        return k;
     }
 
     public int[] TwoSum(int[] nums, int target) {
