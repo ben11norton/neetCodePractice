@@ -1,20 +1,41 @@
 public class Program{
 
-    public int[] RunningSum(int[] nums) {
-        // solution has a time complexity of O(n)
-        // where n is the length of the input array nums
-        // because we are iterating over each element in the array once
-        // and perform constant time operations each iteration
-        
-        // we are also creating a new array with size of n 
-        // so our space complexity is also O(n)
-        int sum = 0;
-        var runningSum = new int[nums.Length];
-        for(var i = 0; i < nums.Length; i++){
-            sum += nums[i];
-            runningSum[i] = sum;
-        }
-        return runningSum;
-    }
+    public int StrStr(string haystack, string needle) {
+        var n = needle.Length - 1;
+        var potentialStart = -1;
+        var needlePointer = 1;
 
+        if(haystack.Length < needle.Length){
+            return potentialStart;
+        }
+
+        for(var i = 0; i < haystack.Length; i++){
+            if(potentialStart == -1){
+                if(haystack[i] == needle[0]){
+                    if(i + n < haystack.Length && haystack[i + n] == needle[n]){
+                        potentialStart = i;
+                    }
+                }
+            } else{
+                if(n == 0){
+                    return potentialStart;
+
+                } else{
+                    if(haystack[i] == needle[needlePointer]){
+                        if(needlePointer < n){
+                            needlePointer++;
+                        } else{
+                            return potentialStart;
+                        }
+                    } else{
+                        i = potentialStart;
+                        potentialStart = -1;
+                        needlePointer = 1;
+                    }
+                }
+            }
+        }
+
+        return potentialStart;
+    }
 }

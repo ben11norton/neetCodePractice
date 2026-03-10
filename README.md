@@ -38,6 +38,16 @@
 
 ![RemoveDuplicates_FromAssortedArray](solutionDiagrams/RemoveDuplicates_FromAssortedArray.png)
 
+<h1>Needle and Haystack - mad dog brute force attempt</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-ArrayTwoPointers-orange" />
+  <img src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![Needle And Haystack](solutionDiagrams/NeedleHaystack.jpg)
+
 <h1>Valid Parenthesis</h1>
 
 <p>
