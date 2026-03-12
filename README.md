@@ -28,6 +28,16 @@
 
 ![Two Sum](solutionDiagrams/TwoSum.png)
 
+<h1>Contains Duplicate</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-ArrayHashing-indigo" />
+  <img src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![Contains Duplicate](solutionDiagrams/ContainsDuplicate.jpg)
+
 <h1>Remove duplicates from sorted array</h1>
 
 <p>
@@ -57,3 +67,4 @@
 </p>
 
 ![Valid Parenthesis](solutionDiagrams/ValidParanthesis.jpg)
+

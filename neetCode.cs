@@ -11,6 +11,18 @@ public class Arrays {
 }
 
 public class HashingArrays {
+
+    public bool ContainsDuplicate(int[] nums) {
+        var map = new Dictionary<int, int>();
+        for(var i = 0; i < nums.Length; i++){
+            if(!map.ContainsKey(nums[i])){
+                map[nums[i]] = i;
+            } else{
+                return true;
+            }
+        }
+        return false;
+    }
 }
 
 
