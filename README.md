@@ -38,6 +38,16 @@
 
 ![Contains Duplicate](solutionDiagrams/ContainsDuplicate.jpg)
 
+<h1>Top K Frequency</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-ArrayHashing-indigo" />
+  <img src="https://img.shields.io/badge/Difficulty-Medium-brightorange" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![Top K Frequency](solutionDiagrams/TopKFrequencyNaive.jpg)
+
 <h1>Remove duplicates from sorted array</h1>
 
 <p>
