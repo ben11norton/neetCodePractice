@@ -1,41 +1,31 @@
 public class Program{
 
-    public int StrStr(string haystack, string needle) {
-        var n = needle.Length - 1;
-        var potentialStart = -1;
-        var needlePointer = 1;
-
-        if(haystack.Length < needle.Length){
-            return potentialStart;
-        }
-
-        for(var i = 0; i < haystack.Length; i++){
-            if(potentialStart == -1){
-                if(haystack[i] == needle[0]){
-                    if(i + n < haystack.Length && haystack[i + n] == needle[n]){
-                        potentialStart = i;
-                    }
-                }
+    public int[] TopKFrequent(int[] nums, int k) {
+        var map = new Dictionary<int, int>();
+        for(var i = 0; i < nums.Length; i++){
+            if(!map.ContainsKey(nums[i]){
+                map[nums[i]] = 1;
             } else{
-                if(n == 0){
-                    return potentialStart;
-
-                } else{
-                    if(haystack[i] == needle[needlePointer]){
-                        if(needlePointer < n){
-                            needlePointer++;
-                        } else{
-                            return potentialStart;
-                        }
-                    } else{
-                        i = potentialStart;
-                        potentialStart = -1;
-                        needlePointer = 1;
-                    }
-                }
+                map[nums[i]]++;
             }
         }
 
-        return potentialStart;
+        var topKNums = new int[k];
+        var topKValues = new int[k];
+        foreach(var (key, value) in map){
+            var currentKey = key;
+            var currentValue = value;
+            for(var i = 0; i < topKNums.Length; i++){
+                if(currentValue > topKValues[i]){
+                    var tempValue = topKValues[i];
+                    topKValues[i] = currentValue;
+                    currentValue = tempValue;
+                    var tempKey = topKNums[i];
+                    topKNums[i] = currentKey;
+                    currentKey = tempKey;
+                }
+            }
+        }
+        return topKNums;
     }
 }
