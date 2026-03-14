@@ -8,6 +8,17 @@ public class Arrays {
 
     public int[] GetConcatenation(int[] nums) {
     }
+
+    public int[] RunningSum(int[] nums) {
+        var n = nums.Length;
+        var runningSum = new int[n];
+        var sum = 0;
+        for(var i = 0; i < nums.Length; i++){
+            sum += nums[i];
+            runningSum[i] = sum;
+        }
+        return runningSum;
+    }
 }
 
 public class HashingArrays {
