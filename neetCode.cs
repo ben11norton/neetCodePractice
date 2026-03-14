@@ -24,6 +24,15 @@ public class Arrays {
 public class HashingArrays {
 
     public bool ContainsDuplicate(int[] nums) {
+        var map = new Dictionary<int, int>();
+        for(var i = 0; i < nums.Length; i++){
+            if(map.ContainsKey(nums[i])){
+                return true;
+            } else{
+                map[nums[i]] = i;
+            }
+        }
+        return false;
     }
 }
 
