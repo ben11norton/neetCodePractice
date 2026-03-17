@@ -78,3 +78,13 @@
 
 ![Valid Parenthesis](solutionDiagrams/ValidParanthesis.jpg)
 
+<h1>Baseball Game</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-Stack-purple" />
+  <img src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![Baseball Game](solutionDiagrams/BaseballGame.jpg)
+
