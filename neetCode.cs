@@ -14,6 +14,21 @@ public class Arrays {
 
     public int[] RunningSum(int[] nums) {
     }
+
+    public int MaximumWealth(int[][] accounts) {
+        var maxWealth = 0;
+        for(var i = 0; i < accounts.Length; i++){
+            var account = accounts[i];
+            var accountSum = 0;
+            for(var j = 0; j < account.Length; j++){
+                accountSum += account[j];
+                if(accountSum > maxWealth){
+                    maxWealth = accountSum;
+                }
+            }
+        }
+        return maxWealth;
+    }
 }
 
 public class HashingArrays {
