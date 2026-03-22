@@ -23,6 +23,21 @@ public class Arrays
 
     public int MaximumWealth(int[][] accounts)
     {
+        int maxWealth = 0;
+        for (var i = 0; i < accounts.Length; i++)
+        {
+            var account = accounts[i];
+            int accountSum = 0;
+            for (var j = 0; j < account.Length; j++)
+            {
+                accountSum += account[j];
+            }
+            if (accountSum > maxWealth)
+            {
+                maxWealth = accountSum;
+            }
+        }
+        return maxWealth;
     }
 }
 
@@ -49,42 +64,6 @@ public class Stacks
 
     public int CalPoints(string[] operations)
     {
-        var stack = new Stack<int>();
-        for (var i = 0; i < operations.Length; i++)
-        {
-            if (int.TryParse(operations[i], out int number))
-            {
-                stack.Push(number);
-            }
-            else if (operations[i] == "C")
-            {
-                stack.Pop();
-            }
-            else if (operations[i] == "D")
-            {
-                var prevScore = stack.Peek();
-                var doubledScore = prevScore * 2;
-                stack.Push(doubledScore);
-            }
-            else if (operations[i] == "+")
-            {
-                var prevScore = stack.Pop();
-                var secondPrevScore = stack.Peek();
-                var sum = prevScore + secondPrevScore;
-                stack.Push(prevScore);
-                stack.Push(sum);
-            }
-        }
-
-        int pointsTotal = 0;
-        if (stack.Count != 0)
-        {
-            foreach (var item in stack)
-            {
-                pointsTotal += item;
-            }
-        }
-        return pointsTotal;
     }
 }
 
