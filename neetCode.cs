@@ -7,16 +7,6 @@ public class Arrays
 
     public int RemoveElement(int[] nums, int val)
     {
-        int k = 0;
-        for (var i = 0; i < nums.Length; i++)
-        {
-            if (nums[i] != val)
-            {
-                nums[k] = nums[i];
-                k++;
-            }
-        }
-        return k;
     }
 
     public int[] TwoSum(int[] nums, int target)
@@ -62,9 +52,9 @@ public class Stacks
         var stack = new Stack<int>();
         for (var i = 0; i < operations.Length; i++)
         {
-            if (int.TryParse(operations[i], out int num))
+            if (int.TryParse(operations[i], out int number))
             {
-                stack.Push(num);
+                stack.Push(number);
             }
             else if (operations[i] == "C")
             {
@@ -73,33 +63,29 @@ public class Stacks
             else if (operations[i] == "D")
             {
                 var prevScore = stack.Peek();
-                var doubleScore = 2 * prevScore;
-                stack.Push(doubleScore);
+                var doubledScore = prevScore * 2;
+                stack.Push(doubledScore);
             }
             else if (operations[i] == "+")
             {
-                var top = stack.Pop();
-                var secondTop = stack.Peek();
-                var sumOfTop2 = top + secondTop;
-                stack.Push(top);
-                stack.Push(sumOfTop2);
+                var prevScore = stack.Pop();
+                var secondPrevScore = stack.Peek();
+                var sum = prevScore + secondPrevScore;
+                stack.Push(prevScore);
+                stack.Push(sum);
             }
         }
-        var sum = 0;
-        if (stack.Count == 0)
-        {
-            return sum;
-        }
-        else
-        {
-            foreach (var num in stack)
-            {
-                sum += num;
-            }
-            return sum;
-        }
-    }
 
+        int pointsTotal = 0;
+        if (stack.Count != 0)
+        {
+            foreach (var item in stack)
+            {
+                pointsTotal += item;
+            }
+        }
+        return pointsTotal;
+    }
 }
 
 
