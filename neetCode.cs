@@ -23,21 +23,68 @@ public class Arrays
 
     public int MaximumWealth(int[][] accounts)
     {
-        int maxWealth = 0;
-        for (var i = 0; i < accounts.Length; i++)
+    }
+
+    public int[] PlusOne(int[] digits)
+    {
+        var n = digits.Length;
+        if (digits[n - 1] == 9)
         {
-            var account = accounts[i];
-            int accountSum = 0;
-            for (var j = 0; j < account.Length; j++)
+            var carry1 = false;
+            var carryCompleted = false;
+            var newDigit = false;
+            for (var i = n - 1; i >= 0; i--)
             {
-                accountSum += account[j];
+                if (digits[i] == 9)
+                {
+                    if (i == 0)
+                    {
+                        if (!carryCompleted)
+                        {
+                            newDigit = true;
+                            digits[i] = 1;
+                        }
+                    }
+                    else
+                    {
+                        if (!carryCompleted)
+                        {
+                            carry1 = true;
+                            digits[i] = 0;
+                        }
+                    }
+                }
+                else
+                {
+                    if (carry1)
+                    {
+                        digits[i]++;
+                        carryCompleted = true;
+                        break;
+                    }
+                }
             }
-            if (accountSum > maxWealth)
+
+            if (newDigit)
             {
-                maxWealth = accountSum;
+                var resultArray = new int[n + 1];
+                for (var i = 0; i < digits.Length; i++)
+                {
+                    resultArray[i] = digits[i];
+                }
+                resultArray[n] = 0;
+                return resultArray;
+            }
+            else
+            {
+                return digits;
             }
         }
-        return maxWealth;
+        else
+        {
+            digits[n - 1]++;
+            return digits;
+        }
     }
 }
 
