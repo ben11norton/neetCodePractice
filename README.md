@@ -48,6 +48,16 @@
 
 ![Contains Duplicate](solutionDiagrams/ContainsDuplicate.jpg)
 
+<h1>Valid Anagram</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-ArrayHashing-indigo" />
+  <img src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![Valid Anagram](solutionDiagrams/ValidAnagram.jpg)
+
 <h1>Top K Frequency</h1>
 
 <p>

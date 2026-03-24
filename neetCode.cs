@@ -39,6 +39,12 @@ public class HashingArrays
 
     public bool IsAnagram(string s, string t)
     {
+        // time complexity is O(n)
+        // where n is the length of s and t
+        // we are iterating over each element of s and performing O(1) operations to build our map
+        // we then loop through each element of t and perform O(1) look up operations
+        // so total time becomes O(2n) which becomes O(n) as we are not concerned about constants
+        // total time is linear to the length of the strings
         if (s.Length != t.Length)
         {
             return false;
