@@ -27,64 +27,6 @@ public class Arrays
 
     public int[] PlusOne(int[] digits)
     {
-        var n = digits.Length;
-        if (digits[n - 1] == 9)
-        {
-            var carry1 = false;
-            var carryCompleted = false;
-            var newDigit = false;
-            for (var i = n - 1; i >= 0; i--)
-            {
-                if (digits[i] == 9)
-                {
-                    if (i == 0)
-                    {
-                        if (!carryCompleted)
-                        {
-                            newDigit = true;
-                            digits[i] = 1;
-                        }
-                    }
-                    else
-                    {
-                        if (!carryCompleted)
-                        {
-                            carry1 = true;
-                            digits[i] = 0;
-                        }
-                    }
-                }
-                else
-                {
-                    if (carry1)
-                    {
-                        digits[i]++;
-                        carryCompleted = true;
-                        break;
-                    }
-                }
-            }
-
-            if (newDigit)
-            {
-                var resultArray = new int[n + 1];
-                for (var i = 0; i < digits.Length; i++)
-                {
-                    resultArray[i] = digits[i];
-                }
-                resultArray[n] = 0;
-                return resultArray;
-            }
-            else
-            {
-                return digits;
-            }
-        }
-        else
-        {
-            digits[n - 1]++;
-            return digits;
-        }
     }
 }
 
@@ -93,6 +35,48 @@ public class HashingArrays
 
     public bool ContainsDuplicate(int[] nums)
     {
+    }
+
+    public bool IsAnagram(string s, string t)
+    {
+        if (s.Length != t.Length)
+        {
+            return false;
+        }
+
+        var map = new Dictionary<char, int>();
+        for (var i = 0; i < s.Length; i++)
+        {
+            if (!map.ContainsKey(s[i]))
+            {
+                map[s[i]] = 1;
+            }
+            else
+            {
+                map[s[i]]++;
+            }
+        }
+
+        for (var i = 0; i < t.Length; i++)
+        {
+            if (map.ContainsKey(t[i]))
+            {
+                if (map[t[i]] > 0)
+                {
+                    map[t[i]]--;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
 
