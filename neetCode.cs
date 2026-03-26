@@ -47,23 +47,23 @@ public class ArrayTwoPointers
 {
     public int[] TwoSum(int[] numbers, int target)
     {
-        // need to redo this one
-        // we got the correct answer but still is O(n sqaured in worst case)
-        // as basically doing a nested loop here
-        var k = 0;
-        for (var i = 1; i < numbers.Length; i++)
+        var n = numbers.Length;
+        var l = 0;
+        var r = n - 1;
+        for (var i = 0; i < n; i++)
         {
-            if (numbers[k] == target - numbers[i])
+            var sum = numbers[l] + numbers[r];
+            if (sum == target)
             {
-                return [k + 1, i + 1];
+                return [l + 1, r + 1];
             }
-            else
+            else if (sum > target)
             {
-                if (i == numbers.Length - 1 && k != numbers.Length - 2)
-                {
-                    k++;
-                    i = k;
-                }
+                r--;
+            }
+            else if (sum < target)
+            {
+                l++;
             }
         }
         return new int[0];
