@@ -27,6 +27,60 @@ public class Arrays
 
     public int[] PlusOne(int[] digits)
     {
+        var n = digits.Length;
+        if (digits[n - 1] == 9)
+        {
+            var carryOver = false;
+            var newDigit = false;
+            for (var i = n - 1; i >= 0; i--)
+            {
+                if (digits[i] == 9)
+                {
+                    if (n == 1)
+                    {
+                        carryOver = true;
+                    }
+                    if (i == 0)
+                    {
+                        if (carryOver)
+                        {
+                            newDigit = true;
+                            digits[i] = 0;
+                        }
+                    }
+                    else
+                    {
+                        digits[i] = 0;
+                        carryOver = true;
+                    }
+                }
+                else
+                {
+                    digits[i]++;
+                    break;
+                }
+            }
+
+            if (newDigit)
+            {
+                var newDigitArray = new int[n + 1];
+                newDigitArray[0] = 1;
+                for (var i = 0; i < n; i++)
+                {
+                    newDigitArray[i + 1] = digits[i];
+                }
+                return newDigitArray;
+            }
+            else
+            {
+                return digits;
+            }
+        }
+        else
+        {
+            digits[n - 1]++;
+        }
+        return digits;
     }
 }
 
@@ -47,26 +101,6 @@ public class ArrayTwoPointers
 {
     public int[] TwoSum(int[] numbers, int target)
     {
-        var n = numbers.Length;
-        var l = 0;
-        var r = n - 1;
-        for (var i = 0; i < n; i++)
-        {
-            var sum = numbers[l] + numbers[r];
-            if (sum == target)
-            {
-                return [l + 1, r + 1];
-            }
-            else if (sum > target)
-            {
-                r--;
-            }
-            else if (sum < target)
-            {
-                l++;
-            }
-        }
-        return new int[0];
     }
 }
 
