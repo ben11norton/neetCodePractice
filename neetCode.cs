@@ -39,44 +39,6 @@ public class HashingArrays
 
     public bool IsAnagram(string s, string t)
     {
-        if (s.Length != t.Length)
-        {
-            return false;
-        }
-        else
-        {
-            var map = new Dictionary<char, int>();
-            for (var i = 0; i < s.Length; i++)
-            {
-                if (!map.ContainsKey(s[i]))
-                {
-                    map[s[i]] = 1;
-                }
-                else
-                {
-                    map[s[i]]++;
-                }
-            }
-            for (var i = 0; i < t.Length; i++)
-            {
-                if (map.ContainsKey(t[i]))
-                {
-                    if (map[t[i]] != 0)
-                    {
-                        map[t[i]]--;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
     }
 }
 
@@ -85,6 +47,25 @@ public class ArrayTwoPointers
 {
     public int[] TwoSum(int[] numbers, int target)
     {
+        var leftPointer = 0;
+        var rightPointer = numbers.Length - 1;
+        for (var i = 0; i < numbers.Length; i++)
+        {
+            var sum = numbers[leftPointer] + numbers[rightPointer];
+            if (sum == target)
+            {
+                return [leftPointer + 1, rightPointer + 1];
+            }
+            else if (sum < target)
+            {
+                leftPointer++;
+            }
+            else if (sum > target)
+            {
+                rightPointer--;
+            }
+        }
+        return new int[0];
     }
 }
 
