@@ -119,3 +119,13 @@
 
 ![Baseball Game](solutionDiagrams/BaseballGame.jpg)
 
+<h1>Remove Adjacent Duplicates</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-Stack-purple" />
+  <img src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![Remove Adjacent Duplicates](solutionDiagrams/RemoveAdjacentDuplicates.jpg)
+

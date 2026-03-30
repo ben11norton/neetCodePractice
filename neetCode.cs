@@ -47,25 +47,6 @@ public class ArrayTwoPointers
 {
     public int[] TwoSum(int[] numbers, int target)
     {
-        var leftPointer = 0;
-        var rightPointer = numbers.Length - 1;
-        for (var i = 0; i < numbers.Length; i++)
-        {
-            var sum = numbers[leftPointer] + numbers[rightPointer];
-            if (sum == target)
-            {
-                return [leftPointer + 1, rightPointer + 1];
-            }
-            else if (sum < target)
-            {
-                leftPointer++;
-            }
-            else if (sum > target)
-            {
-                rightPointer--;
-            }
-        }
-        return new int[0];
     }
 }
 
@@ -79,6 +60,36 @@ public class Stacks
 
     public int CalPoints(string[] operations)
     {
+    }
+
+    public string RemoveDuplicates(string s)
+    {
+        var stack = new Stack<char>();
+        for (var i = 0; i < s.Length; i++)
+        {
+            if (stack.Count != 0)
+            {
+                var duplicateFound = s[i] == stack.Peek();
+                if (duplicateFound)
+                {
+                    stack.Pop();
+                }
+                else
+                {
+                    stack.Push(s[i]);
+                }
+            }
+            else
+            {
+                stack.Push(s[i]);
+            }
+        }
+        var result = "";
+        foreach (var item in stack)
+        {
+            result = item + result;
+        }
+        return result;
     }
 }
 
