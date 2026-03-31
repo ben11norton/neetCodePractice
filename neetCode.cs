@@ -28,6 +28,28 @@ public class Arrays
     public int[] PlusOne(int[] digits)
     {
     }
+
+    public int PivotIndex(int[] nums)
+    {
+        for (var pivotIndex = 0; pivotIndex < nums.Length; pivotIndex++)
+        {
+            var leftSum = 0;
+            for (var i = 0; i < pivotIndex; i++)
+            {
+                leftSum += nums[i];
+            }
+            var rightSum = 0;
+            for (var i = pivotIndex + 1; i < nums.Length; i++)
+            {
+                rightSum += nums[i];
+            }
+            if (leftSum == rightSum)
+            {
+                return pivotIndex;
+            }
+        }
+        return -1;
+    }
 }
 
 public class HashingArrays
@@ -64,32 +86,6 @@ public class Stacks
 
     public string RemoveDuplicates(string s)
     {
-        var stack = new Stack<char>();
-        for (var i = 0; i < s.Length; i++)
-        {
-            if (stack.Count != 0)
-            {
-                var duplicateFound = s[i] == stack.Peek();
-                if (duplicateFound)
-                {
-                    stack.Pop();
-                }
-                else
-                {
-                    stack.Push(s[i]);
-                }
-            }
-            else
-            {
-                stack.Push(s[i]);
-            }
-        }
-        var result = "";
-        foreach (var item in stack)
-        {
-            result = item + result;
-        }
-        return result;
     }
 }
 
