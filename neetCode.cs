@@ -31,24 +31,6 @@ public class Arrays
 
     public int PivotIndex(int[] nums)
     {
-        for (var pivotIndex = 0; pivotIndex < nums.Length; pivotIndex++)
-        {
-            var leftSum = 0;
-            for (var i = 0; i < pivotIndex; i++)
-            {
-                leftSum += nums[i];
-            }
-            var rightSum = 0;
-            for (var i = pivotIndex + 1; i < nums.Length; i++)
-            {
-                rightSum += nums[i];
-            }
-            if (leftSum == rightSum)
-            {
-                return pivotIndex;
-            }
-        }
-        return -1;
     }
 }
 
@@ -61,6 +43,49 @@ public class HashingArrays
 
     public bool IsAnagram(string s, string t)
     {
+    }
+
+    public int[] Intersection(int[] nums1, int[] nums2)
+    {
+        // time complexity :
+        // we iterate over each element in nums1 so O(n) where n is length of nums1
+        // each element we perform a O(1) constant operation to build our map
+        // we then iterate over each elemnt in nums2 once, so O(m) where m is length of nums2
+        // peform O(1) look ups and constant operations inside second loop
+        // we then iterate over each element in our result Array so O(k) where k is resultCount
+        // so overall we have O(n + m + k) but because k <=n, it can be absorbed into n
+        // so time complexity become O(n + m), space complexity is O(n) as we store n elements in our dictionary
+        var map = new Dictionary<int, bool>();
+        for (var i = 0; i < nums1.Length; i++)
+        {
+            if (!map.ContainsKey(nums1[i]))
+            {
+                map[nums1[i]] = false;
+            }
+        }
+        int resultCount = 0;
+        for (var i = 0; i < nums2.Length; i++)
+        {
+            if (map.ContainsKey(nums2[i]))
+            {
+                if (!map[nums2[i]])
+                {
+                    map[nums2[i]] = true;
+                    resultCount++;
+                }
+            }
+        }
+        var resultArray = new int[resultCount];
+        var resultArrayIndex = 0;
+        foreach (var item in map)
+        {
+            if (item.Value)
+            {
+                resultArray[resultArrayIndex] = item.Key;
+                resultArrayIndex++;
+            }
+        }
+        return resultArray;
     }
 }
 

@@ -68,6 +68,16 @@
 
 ![Top K Frequency](solutionDiagrams/topKFrequencyNaive.jpg)
 
+<h1>Intersection of 2 Arrays</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-ArrayHashing-indigo" />
+  <img src="https://img.shields.io/badge/Difficulty-Medium-orange" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![Intersection of 2 Arrays](solutionDiagrams/IntersectionOf2Arrays.jpg)
+
 <h1>Remove duplicates from sorted array</h1>
 
 <p>
