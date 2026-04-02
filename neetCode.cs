@@ -31,6 +31,26 @@ public class Arrays
 
     public int PivotIndex(int[] nums)
     {
+        for (var p = 0; p < nums.Length; p++)
+        {
+            var leftSum = 0;
+            for (var i = 0; i < p; i++)
+            {
+                leftSum += nums[i];
+            }
+
+            var rightSum = 0;
+            for (var i = p + 1; i < nums.Length; i++)
+            {
+                rightSum += nums[i];
+            }
+
+            if (leftSum == rightSum)
+            {
+                return p;
+            }
+        }
+        return -1;
     }
 }
 
@@ -72,29 +92,6 @@ public class Stacks
 
     public string RemoveDuplicates(string s)
     {
-        var stack = new Stack<char>();
-        for (var i = 0; i < s.Length; i++)
-        {
-            if (stack.Count == 0)
-            {
-                stack.Push(s[i]);
-            }
-            else if (stack.Peek() == s[i])
-            {
-                stack.Pop();
-            }
-            else
-            {
-                stack.Push(s[i]);
-            }
-        }
-
-        var result = "";
-        foreach (var item in stack)
-        {
-            result = item + result;
-        }
-        return result;
     }
 }
 
