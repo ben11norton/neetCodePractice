@@ -28,6 +28,16 @@
 
 ![Richest Customer Wealth](solutionDiagrams/richestCustomerWealth.jpg)
 
+<h1>Pivot Index</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-Array-blue" />
+  <img src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![Pivot Index](solutionDiagrams/PivotIndex.jpg)
+
 <h1>Two Sum</h1>
 
 <p>
