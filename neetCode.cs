@@ -47,37 +47,6 @@ public class HashingArrays
 
     public int[] Intersection(int[] nums1, int[] nums2)
     {
-        var map = new Dictionary<int, bool>();
-        for (var i = 0; i < nums1.Length; i++)
-        {
-            if (!map.ContainsKey(nums1[i]))
-            {
-                map[nums1[i]] = false;
-            }
-        }
-        var resultCount = 0;
-        for (var i = 0; i < nums2.Length; i++)
-        {
-            if (map.ContainsKey(nums2[i]))
-            {
-                if (!map[nums2[i]])
-                {
-                    map[nums2[i]] = true;
-                    resultCount++;
-                }
-            }
-        }
-        var resultIndex = 0;
-        var result = new int[resultCount];
-        foreach (var item in map)
-        {
-            if (item.Value)
-            {
-                result[resultIndex] = item.Key;
-                resultIndex++;
-            }
-        }
-        return result;
     }
 }
 
@@ -86,6 +55,42 @@ public class ArrayTwoPointers
 {
     public int[] TwoSum(int[] numbers, int target)
     {
+    }
+
+    public bool IsPalindrome(string s)
+    {
+        // solution is O(n + m)
+        // where n is length of s and m is length of formatted string we build
+        // time complexity grows linearly based on the length of string s
+        // because m will always be <= to n , we can simplify the solution to be O(n)
+        var formatted = "";
+        for (var i = 0; i < s.Length; i++)
+        {
+            if (char.IsLetterOrDigit(s[i]))
+            {
+                if (char.IsLetter(s[i]))
+                {
+                    formatted += char.ToLower(s[i]);
+                }
+                else
+                {
+                    formatted += s[i];
+                }
+            }
+        }
+        int rightPointer = formatted.Length - 1;
+        for (var i = 0; i < formatted.Length; i++)
+        {
+            if (formatted[i] == formatted[rightPointer])
+            {
+                rightPointer--;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
 
