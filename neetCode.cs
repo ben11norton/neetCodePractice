@@ -59,27 +59,28 @@ public class ArrayTwoPointers
 
     public bool IsPalindrome(string s)
     {
-        // solution is O(n + m)
-        // where n is length of s and m is length of formatted string we build
-        // time complexity grows linearly based on the length of string s
-        // because m will always be <= to n , we can simplify the solution to be O(n)
-        var formatted = "";
+        // after we switched formatted from a string and concatenation use
+        // to using a char array we now have a O(n) solution
+        int k = 0;
+        var formatted = new char[s.Length];
         for (var i = 0; i < s.Length; i++)
         {
             if (char.IsLetterOrDigit(s[i]))
             {
                 if (char.IsLetter(s[i]))
                 {
-                    formatted += char.ToLower(s[i]);
+                    formatted[k] = char.ToLower(s[i]);
+                    k++;
                 }
                 else
                 {
-                    formatted += s[i];
+                    formatted[k] = s[i];
+                    k++;
                 }
             }
         }
-        int rightPointer = formatted.Length - 1;
-        for (var i = 0; i < formatted.Length; i++)
+        int rightPointer = k - 1;
+        for (var i = 0; i < k; i++)
         {
             if (formatted[i] == formatted[rightPointer])
             {

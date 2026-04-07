@@ -109,6 +109,16 @@
 
 ![Two Sum II (sorted input)](solutionDiagrams/TwoSum2Sorted.jpg)
 
+<h1>Valid Palindrome</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-ArrayTwoPointers-orange" />
+  <img src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![Valid Palindrome](solutionDiagrams/ValidPalindrome.jpg)
+
 <h1>Needle and Haystack - mad dog brute force attempt</h1>
 
 <p>
