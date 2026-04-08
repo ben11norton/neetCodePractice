@@ -159,3 +159,12 @@
 
 ![Remove Adjacent Duplicates](solutionDiagrams/RemoveAdjacentDuplicates.jpg)
 
+<h1>Backspace String Compare</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-Stack-purple" />
+  <img src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![Backspace String Compare](solutionDiagrams/BackspaceStringCompare.jpg)
