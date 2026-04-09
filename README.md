@@ -38,6 +38,16 @@
 
 ![Pivot Index](solutionDiagrams/PivotIndex.jpg)
 
+<h1>Best Time to Buy and Sell Stock</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-Array-blue" />
+  <img src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![BestTimetoBuyandSellStock](solutionDiagrams/BestTimetoBuyandSellStock.jpg)
+
 <h1>Two Sum</h1>
 
 <p>
