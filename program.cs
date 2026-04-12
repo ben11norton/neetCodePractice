@@ -1,21 +1,34 @@
 public class Program
 {
-    public int MaxProfit(int[] prices)
+    public bool IsPalindrome(string s)
     {
-        var maxProfit = 0;
-        var lowestNum = prices[0];
-        for (var i = 1; i < prices.Length; i++)
+        var charArray = new char[s.Length];
+        var charArrayIndex = 0;
+        for (var i = 0; i < s.Length; i++)
         {
-            if (lowestNum > prices[i - 1])
+            if (char.IsLetter(s[i]))
             {
-                lowestNum = prices[i - 1];
+                charArray[charArrayIndex] = char.ToLower(s[i]);
+                charArrayIndex++;
             }
-            var profit = prices[i] - lowestNum;
-            if (profit > maxProfit)
+            else if (char.IsDigit(s[i]))
             {
-                maxProfit = profit;
+                charArray[charArrayIndex] = s[i];
+                charArrayIndex++;
             }
         }
-        return maxProfit;
+        var r = charArrayIndex - 1;
+        for (var i = 0; i < charArrayIndex; i++)
+        {
+            if (charArray[i] == charArray[r])
+            {
+                r--;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
