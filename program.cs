@@ -1,45 +1,21 @@
 public class Program
 {
-    public bool BackspaceCompare(string s, string t)
+    public int MaxProfit(int[] prices)
     {
-        var stackS = BuildStack(s);
-        var stackT = BuildStack(t);
-
-        if (stackS.Count != stackT.Count)
+        var maxProfit = 0;
+        var buyPrice = prices[0];
+        for (var i = 1; i < prices.Length; i++)
         {
-            return false;
-        }
-        else
-        {
-            foreach (var item in stackS)
+            if (prices[i - 1] < buyPrice)
             {
-                var stackTItem = stackT.Pop();
-                if (item != stackTItem)
-                {
-                    return false;
-                }
+                buyPrice = prices[i - 1];
             }
-            return true;
-        }
-    }
-
-    private Stack<char> BuildStack(string input)
-    {
-        var stack = new Stack<char>();
-        for (var i = 0; i < input.Length; i++)
-        {
-            if (input[i] == '#')
+            var profit = prices[i] - buyPrice;
+            if (profit > maxProfit)
             {
-                if (stack.Count > 0)
-                {
-                    stack.Pop();
-                }
-            }
-            else
-            {
-                stack.Push(input[i]);
+                maxProfit = profit;
             }
         }
-        return stack;
+        return maxProfit;
     }
 }
