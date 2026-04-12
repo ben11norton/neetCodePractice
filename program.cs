@@ -1,34 +1,45 @@
 public class Program
 {
-    public bool IsPalindrome(string s)
+    public bool BackspaceCompare(string s, string t)
     {
-        var charArray = new char[s.Length];
-        var charArrayIndex = 0;
-        for (var i = 0; i < s.Length; i++)
+        var stackS = BuildStack(s);
+        var stackT = BuildStack(t);
+
+        if (stackS.Count != stackT.Count)
         {
-            if (char.IsLetter(s[i]))
-            {
-                charArray[charArrayIndex] = char.ToLower(s[i]);
-                charArrayIndex++;
-            }
-            else if (char.IsDigit(s[i]))
-            {
-                charArray[charArrayIndex] = s[i];
-                charArrayIndex++;
-            }
+            return false;
         }
-        var r = charArrayIndex - 1;
-        for (var i = 0; i < charArrayIndex; i++)
+        else
         {
-            if (charArray[i] == charArray[r])
+            foreach (var item in stackS)
             {
-                r--;
+                var stackTItem = stackT.Pop();
+                if (item != stackTItem)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+
+    private Stack<char> BuildStack(string input)
+    {
+        var stack = new Stack<char>();
+        for (var i = 0; i < input.Length; i++)
+        {
+            if (input[i] == '#')
+            {
+                if (stack.Count > 0)
+                {
+                    stack.Pop();
+                }
             }
             else
             {
-                return false;
+                stack.Push(input[i]);
             }
         }
-        return true;
+        return stack;
     }
 }
