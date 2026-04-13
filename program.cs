@@ -1,21 +1,26 @@
 public class Program
 {
-    public int MaxProfit(int[] prices)
+    public ListNode ReverseList(ListNode head)
     {
-        var maxProfit = 0;
-        var buyPrice = prices[0];
-        for (var i = 1; i < prices.Length; i++)
+        if (head == null)
         {
-            if (prices[i - 1] < buyPrice)
-            {
-                buyPrice = prices[i - 1];
-            }
-            var profit = prices[i] - buyPrice;
-            if (profit > maxProfit)
-            {
-                maxProfit = profit;
-            }
+            return head;
         }
-        return maxProfit;
+        var stack = new Stack<ListNode>();
+        var current = head;
+        while (current != null)
+        {
+            stack.Push(current);
+            current = current.next;
+        }
+        var reversedHead = stack.Pop();
+        var reversedListNode = reversedHead;
+        while (stack.Count > 0)
+        {
+            reversedListNode.next = stack.Pop();
+            reversedListNode = reversedListNode.next;
+        }
+        reversedListNode.next = null;
+        return reversedHead;
     }
 }
