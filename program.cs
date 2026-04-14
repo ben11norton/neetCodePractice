@@ -1,26 +1,28 @@
 public class Program
 {
-    public ListNode ReverseList(ListNode head)
+    public int[] SortedSquares(int[] nums)
     {
-        if (head == null)
+        var l = 0;
+        var r = nums.Length - 1;
+        int p = r;
+        var sqrNums = new int[nums.Length];
+        for (var i = 0; i < nums.Length; i++)
         {
-            return head;
+            var lSqrd = nums[l] * nums[l];
+            var rSqrd = nums[r] * nums[r];
+            if (lSqrd > rSqrd)
+            {
+                sqrNums[p] = lSqrd;
+                l++;
+                p--;
+            }
+            else
+            {
+                sqrNums[p] = rSqrd;
+                r--;
+                p--;
+            }
         }
-        var stack = new Stack<ListNode>();
-        var current = head;
-        while (current != null)
-        {
-            stack.Push(current);
-            current = current.next;
-        }
-        var reversedHead = stack.Pop();
-        var reversedListNode = reversedHead;
-        while (stack.Count > 0)
-        {
-            reversedListNode.next = stack.Pop();
-            reversedListNode = reversedListNode.next;
-        }
-        reversedListNode.next = null;
-        return reversedHead;
+        return sqrNums;
     }
 }

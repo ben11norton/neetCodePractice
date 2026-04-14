@@ -139,6 +139,16 @@
 
 ![Needle And Haystack](solutionDiagrams/NeedleHaystack.jpg)
 
+<h1>sqaures of sorted array</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-ArrayTwoPointers-orange" />
+  <img src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![Squares of sorted array](solutionDiagrams/sortedSquares.jpg)
+
 <h1>Valid Parenthesis</h1>
 
 <p>
