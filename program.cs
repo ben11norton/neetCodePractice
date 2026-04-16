@@ -1,28 +1,17 @@
 public class Program
 {
-    public int[] SortedSquares(int[] nums)
+    public int[] FinalPrices(int[] prices)
     {
-        var l = 0;
-        var r = nums.Length - 1;
-        int p = r;
-        var sqrNums = new int[nums.Length];
-        for (var i = 0; i < nums.Length; i++)
+        var stack = new Stack<int>();
+        for (var i = 0; i < prices.Length; i++)
         {
-            var lSqrd = nums[l] * nums[l];
-            var rSqrd = nums[r] * nums[r];
-            if (lSqrd > rSqrd)
+            while (stack.Count > 0 && prices[stack.Peek()] >= prices[i])
             {
-                sqrNums[p] = lSqrd;
-                l++;
-                p--;
+                var index = stack.Pop();
+                prices[index] -= prices[i];
             }
-            else
-            {
-                sqrNums[p] = rSqrd;
-                r--;
-                p--;
-            }
+            stack.Push(i);
         }
-        return sqrNums;
+        return prices;
     }
 }
