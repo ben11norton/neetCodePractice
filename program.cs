@@ -1,17 +1,28 @@
 public class Program
 {
-    public int[] FinalPrices(int[] prices)
+    public double FindMaxAverage(int[] nums, int k)
     {
-        var stack = new Stack<int>();
-        for (var i = 0; i < prices.Length; i++)
+        double windowSum = 0;
+        for (var i = 0; i < k; i++)
         {
-            while (stack.Count > 0 && prices[stack.Peek()] >= prices[i])
-            {
-                var index = stack.Pop();
-                prices[index] -= prices[i];
-            }
-            stack.Push(i);
+            windowSum += nums[i];
         }
-        return prices;
+        double maxAvg = windowSum / k;
+        for (var i = k; i < nums.Length; i++)
+        {
+            windowSum += nums[i];
+            windowSum -= nums[i - k];
+            var windowAvg = windowSum / k;
+            if (windowAvg > maxAvg)
+            {
+                maxAvg = windowAvg;
+            }
+        }
+        return maxAvg;
     }
 }
+
+
+
+
+
