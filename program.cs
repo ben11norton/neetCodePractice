@@ -1,24 +1,56 @@
 public class Program
 {
-    public double FindMaxAverage(int[] nums, int k)
+    public ListNode RemoveNthFromEnd(ListNode head, int n)
     {
-        double windowSum = 0;
-        for (var i = 0; i < k; i++)
+        var map = new Dictionary<int, ListNode>();
+        int nodeIndex = 0;
+        int endingIndex = 0;
+        ListNode current = head;
+        while (current != null)
         {
-            windowSum += nums[i];
-        }
-        double maxAvg = windowSum / k;
-        for (var i = k; i < nums.Length; i++)
-        {
-            windowSum += nums[i];
-            windowSum -= nums[i - k];
-            var windowAvg = windowSum / k;
-            if (windowAvg > maxAvg)
+            map[nodeIndex] = current;
+            current = current.next;
+            if (current == null)
             {
-                maxAvg = windowAvg;
+                endingIndex = nodeIndex;
+            }
+            else
+            {
+                nodeIndex++;
             }
         }
-        return maxAvg;
+        var tailNode = map[endingIndex];
+        var targetIndex = (endingIndex + 1) - n;
+        var targetNode = map[targetIndex];
+        if (targetNode == head)
+        {
+            if (targetNode.next == null)
+            {
+                return null;
+            }
+            else
+            {
+                return targetNode.next;
+            }
+        }
+        var previousIndex = endingIndex - n;
+        if (previousIndex < 0)
+        {
+            return null;
+        }
+        else
+        {
+            var previousNode = map[previousIndex];
+            if (tailNode != targetNode)
+            {
+                previousNode.next = targetNode.next;
+            }
+            else
+            {
+                previousNode.next = null;
+            }
+        }
+        return head;
     }
 }
 
