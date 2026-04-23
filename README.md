@@ -149,6 +149,16 @@
 
 ![Squares of sorted array](solutionDiagrams/sortedSquares.jpg)
 
+<h1>Reverse String</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-ArrayTwoPointers-orange" />
+  <img src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![Reverse String](solutionDiagrams/ReverseString.jpg)
+
 <h1>Valid Parenthesis</h1>
 
 <p>
@@ -188,3 +198,23 @@
 </p>
 
 ![Backspace String Compare](solutionDiagrams/BackspaceStringCompare.jpg)
+
+<h1>Maximum Average Subarray I</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-SlidingWindow-red" />
+  <img src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![Maximum Average Subarray I](solutionDiagrams/MaximumAverageSubarrayI.jpg)
+
+<h1>Remove Nth Node From End of List</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-LinkedList-blue" />
+  <img src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![Remove Nth Node From End of List](solutionDiagrams/RemoveNthNodeFromEndofList.jpg)
