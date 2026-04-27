@@ -1,15 +1,27 @@
 public class Program
 {
-    public void ReverseString(char[] s)
+    public int FirstUniqChar(string s)
     {
-        var R = s.Length - 1;
-        for (var i = 0; i < s.Length / 2; i++)
+        var map = new Dictionary<char, int>();
+        for (var i = 0; i < s.Length; i++)
         {
-            var temp = s[i];
-            s[i] = s[R];
-            s[R] = temp;
-            R--;
+            if (map.ContainsKey(s[i]))
+            {
+                map[s[i]]++;
+            }
+            else
+            {
+                map[s[i]] = 1;
+            }
         }
+        for (var i = 0; i < s.Length; i++)
+        {
+            if (map[s[i]] == 1)
+            {
+                return i;
+            }
+        }
+        return -1;
     }
 }
 
