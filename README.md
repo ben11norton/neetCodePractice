@@ -96,6 +96,8 @@
   <img src="https://img.shields.io/badge/Status-Solved-success" />
 </p>
 
+![Intersection of 2 Arrays](solutionDiagrams/IntersectionOf2Arrays.jpg)
+
 <h1>First Unique Character in a String</h1>
 
 <p>
