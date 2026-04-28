@@ -219,6 +219,16 @@
 
 ![Maximum Average Subarray I](solutionDiagrams/MaximumAverageSubarrayI.jpg)
 
+<h1>Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-SlidingWindow-red" />
+  <img src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold](solutionDiagrams/NumberSubArraysSizeKAverage.jpg)
+
 <h1>Remove Nth Node From End of List</h1>
 
 <p>
