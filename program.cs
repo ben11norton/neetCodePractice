@@ -1,29 +1,24 @@
 public class Program
 {
-    public int NumOfSubarrays(int[] arr, int k, int threshold)
+    public bool HasCycle(ListNode head)
     {
-        double windowSum = 0;
-        int successfullWindowCount = 0;
-        for (var i = 0; i < k; i++)
+        var map = new Dictionary<ListNode, int>();
+        int index = 0;
+        var current = head;
+        while (current != null)
         {
-            windowSum += arr[i];
-        }
-        var windowAvg = windowSum / k;
-        if (windowAvg >= threshold)
-        {
-            successfullWindowCount++;
-        }
-        for (var i = k; i < arr.Length; i++)
-        {
-            windowSum += arr[i];
-            windowSum -= arr[i - k];
-            var newAvg = windowSum / k;
-            if (newAvg >= threshold)
+            if (current.next != null && map.ContainsKey(current.next))
             {
-                successfullWindowCount++;
+                return true;
             }
+            else
+            {
+                map[current] = index;
+                index++;
+            }
+            current = current.next;
         }
-        return successfullWindowCount;
+        return false;
     }
 }
 
