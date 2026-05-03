@@ -1,27 +1,30 @@
 public class Program
 {
-    public int FirstUniqChar(string s)
+    public int NumOfSubarrays(int[] arr, int k, int threshold)
     {
-        var map = new Dictionary<char, int>();
-        for (var i = 0; i < s.Length; i++)
+        double windowSum = 0;
+        var windowCount = 0;
+        double windowAvg = 0;
+        for (var i = 0; i < k; i++)
         {
-            if (map.ContainsKey(s[i]))
+            windowSum += arr[i];
+            windowAvg = (double)windowSum / k;
+        }
+        if (windowAvg >= threshold)
+        {
+            windowCount++;
+        }
+        for (var i = k; i < arr.Length; i++)
+        {
+            windowSum += arr[i];
+            windowSum -= arr[i - k];
+            var newWindowAvg = (double)windowSum / k;
+            if (newWindowAvg >= threshold)
             {
-                map[s[i]]++;
-            }
-            else
-            {
-                map[s[i]] = 1;
+                windowCount++;
             }
         }
-        for (var i = 0; i < s.Length; i++)
-        {
-            if (map[s[i]] == 1)
-            {
-                return i;
-            }
-        }
-        return -1;
+        return windowCount;
     }
 }
 
