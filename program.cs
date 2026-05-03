@@ -1,24 +1,27 @@
 public class Program
 {
-    public bool HasCycle(ListNode head)
+    public int FirstUniqChar(string s)
     {
-        var map = new Dictionary<ListNode, int>();
-        int index = 0;
-        var current = head;
-        while (current != null)
+        var map = new Dictionary<char, int>();
+        for (var i = 0; i < s.Length; i++)
         {
-            if (current.next != null && map.ContainsKey(current.next))
+            if (map.ContainsKey(s[i]))
             {
-                return true;
+                map[s[i]]++;
             }
             else
             {
-                map[current] = index;
-                index++;
+                map[s[i]] = 1;
             }
-            current = current.next;
         }
-        return false;
+        for (var i = 0; i < s.Length; i++)
+        {
+            if (map[s[i]] == 1)
+            {
+                return i;
+            }
+        }
+        return -1;
     }
 }
 
