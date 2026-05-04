@@ -1,24 +1,29 @@
 public class Program
 {
-    public bool HasCycle(ListNode head)
+    public int MaxSubArray(int[] nums)
     {
-        var map = new Dictionary<ListNode, int>();
-        int nodeIndex = 0;
-        var current = head;
-        while (current != null)
+        var largestSum = 0;
+        for (var i = 0; i < nums.Length; i++)
         {
-            if (current.next != null && map.ContainsKey(current.next))
-            {
-                return true;
-            }
-            else
-            {
-                map[current] = nodeIndex;
-                nodeIndex++;
-            }
-            current = current.next;
+            largestSum += nums[i];
         }
-        return false;
+        for (var i = 0; i < nums.Length; i++)
+        {
+            var sum = nums[i];
+            if (sum > largestSum)
+            {
+                largestSum = sum;
+            }
+            for (var j = i + 1; j < nums.Length; j++)
+            {
+                sum += nums[j];
+                if (sum > largestSum)
+                {
+                    largestSum = sum;
+                }
+            }
+        }
+        return largestSum;
     }
 }
 
