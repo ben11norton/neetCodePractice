@@ -2,28 +2,25 @@ public class Program
 {
     public int MaxSubArray(int[] nums)
     {
-        var largestSum = 0;
-        for (var i = 0; i < nums.Length; i++)
+        var sum = nums[0];
+        var bestSum = sum;
+        for (var i = 1; i < nums.Length; i++)
         {
-            largestSum += nums[i];
-        }
-        for (var i = 0; i < nums.Length; i++)
-        {
-            var sum = nums[i];
-            if (sum > largestSum)
+            var newSum = sum + nums[i];
+            if (nums[i] > newSum)
             {
-                largestSum = sum;
+                sum = nums[i];
             }
-            for (var j = i + 1; j < nums.Length; j++)
+            else
             {
-                sum += nums[j];
-                if (sum > largestSum)
-                {
-                    largestSum = sum;
-                }
+                sum = newSum;
+            }
+            if (sum > bestSum)
+            {
+                bestSum = sum;
             }
         }
-        return largestSum;
+        return bestSum;
     }
 }
 
