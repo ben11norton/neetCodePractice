@@ -108,6 +108,16 @@
 
 ![First unique char in string](solutionDiagrams/firstUniqueCharInString.jpg)
 
+<h1>Ransom Note</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-ArrayHashing-indigo" />
+  <img src="https://img.shields.io/badge/Difficulty-Medium-orange" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![Ransom Note](solutionDiagrams/ransomNote.jpg)
+
 <h1>Remove duplicates from sorted array</h1>
 
 <p>
