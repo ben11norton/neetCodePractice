@@ -1,26 +1,35 @@
 public class Program
 {
-    public int MaxSubArray(int[] nums)
+    public bool CanConstruct(string ransomNote, string magazine)
     {
-        var sum = nums[0];
-        var bestSum = sum;
-        for (var i = 1; i < nums.Length; i++)
+        var map = new Dictionary<char, int>();
+        for (var i = 0; i < magazine.Length; i++)
         {
-            var newSum = sum + nums[i];
-            if (nums[i] > newSum)
+            if (map.ContainsKey(magazine[i]))
             {
-                sum = nums[i];
+                map[magazine[i]]++;
             }
             else
             {
-                sum = newSum;
-            }
-            if (sum > bestSum)
-            {
-                bestSum = sum;
+                map[magazine[i]] = 1;
             }
         }
-        return bestSum;
+        for (var i = 0; i < ransomNote.Length; i++)
+        {
+            if (!map.ContainsKey(ransomNote[i]))
+            {
+                return false;
+            }
+            else if (map[ransomNote[i]] == 0)
+            {
+                return false;
+            }
+            else
+            {
+                map[ransomNote[i]]--;
+            }
+        }
+        return true;
     }
 }
 
