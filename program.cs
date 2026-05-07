@@ -1,35 +1,27 @@
 public class Program
 {
-    public bool CanConstruct(string ransomNote, string magazine)
+    public void Merge(int[] nums1, int m, int[] nums2, int n)
     {
-        var map = new Dictionary<char, int>();
-        for (var i = 0; i < magazine.Length; i++)
+        // 1. merge
+        int k = 0;
+        for (var i = m; i < m + n; i++)
         {
-            if (map.ContainsKey(magazine[i]))
+            nums1[i] = nums2[k];
+            k++;
+        }
+        // 2. sort
+        for (var i = 0; i < m + n; i++)
+        {
+            for (var j = i + 1; j < m + n; j++)
             {
-                map[magazine[i]]++;
-            }
-            else
-            {
-                map[magazine[i]] = 1;
+                if (nums1[i] > nums1[j])
+                {
+                    var temp = nums1[i];
+                    nums1[i] = nums1[j];
+                    nums1[j] = temp;
+                }
             }
         }
-        for (var i = 0; i < ransomNote.Length; i++)
-        {
-            if (!map.ContainsKey(ransomNote[i]))
-            {
-                return false;
-            }
-            else if (map[ransomNote[i]] == 0)
-            {
-                return false;
-            }
-            else
-            {
-                map[ransomNote[i]]--;
-            }
-        }
-        return true;
     }
 }
 
