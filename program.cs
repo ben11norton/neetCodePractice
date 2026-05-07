@@ -2,25 +2,22 @@ public class Program
 {
     public void Merge(int[] nums1, int m, int[] nums2, int n)
     {
-        // 1. merge
-        int k = 0;
-        for (var i = m; i < m + n; i++)
+        int i = m - 1;
+        int j = n - 1;
+        int k = m + n - 1;
+        while (j >= 0)
         {
-            nums1[i] = nums2[k];
-            k++;
-        }
-        // 2. sort
-        for (var i = 0; i < m + n; i++)
-        {
-            for (var j = i + 1; j < m + n; j++)
+            if (i >= 0 && nums1[i] > nums2[j])
             {
-                if (nums1[i] > nums1[j])
-                {
-                    var temp = nums1[i];
-                    nums1[i] = nums1[j];
-                    nums1[j] = temp;
-                }
+                nums1[k] = nums1[i];
+                i--;
             }
+            else
+            {
+                nums1[k] = nums2[j];
+                j--;
+            }
+            k--;
         }
     }
 }
