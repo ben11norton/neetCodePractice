@@ -1,25 +1,25 @@
 public class Program
 {
-    public void Merge(int[] nums1, int m, int[] nums2, int n)
+    public int MaxSubArray(int[] nums)
     {
-        int k = 0;
-        for (var i = m; i < m + n; i++)
+        int sum = nums[0];
+        int bestSum = sum;
+        for (var i = 1; i < nums.Length; i++)
         {
-            nums1[i] = nums2[k];
-            k++;
-        }
-        for (var i = 0; i < m + n; i++)
-        {
-            for (var j = 0; j < m + n; j++)
+            if (nums[i] > nums[i] + sum)
             {
-                if (nums1[i] < nums1[j])
-                {
-                    var temp = nums1[i];
-                    nums1[i] = nums1[j];
-                    nums1[j] = temp;
-                }
+                sum = nums[i];
+            }
+            else
+            {
+                sum += nums[i];
+            }
+            if (sum > bestSum)
+            {
+                bestSum = sum;
             }
         }
+        return bestSum;
     }
 }
 
