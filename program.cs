@@ -1,35 +1,26 @@
 public class Program
 {
-    public string MakeGood(string s)
+    public void Merge(int[] nums1, int m, int[] nums2, int n)
     {
-        var stack = new Stack<char>();
-        stack.Push(s[0]);
-        for (var i = 1; i < s.Length; i++)
+        int a = m - 1;
+        int b = n - 1;
+        int k = m + n - 1;
+        while (b >= 0)
         {
-            if (stack.Count > 0)
+            if (a >= 0 && nums1[a] > nums2[b])
             {
-                var previous = stack.Peek();
-                if (char.ToLower(previous) == char.ToLower(s[i]) && previous != s[i])
-                {
-                    stack.Pop();
-                }
-                else
-                {
-                    stack.Push(s[i]);
-                }
+                nums1[k] = nums1[a];
+                nums1[a] = nums2[b];
+                k--;
+                a--;
             }
             else
             {
-                stack.Push(s[i]);
+                nums1[k] = nums2[b];
+                k--;
+                b--;
             }
         }
-        string cleanString = "";
-        int newSLength = stack.Count;
-        for (var i = 0; i < newSLength; i++)
-        {
-            cleanString = stack.Pop() + cleanString;
-        }
-        return cleanString;
     }
 }
 
