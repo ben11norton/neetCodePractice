@@ -1,25 +1,35 @@
 public class Program
 {
-    public int MaxSubArray(int[] nums)
+    public string MakeGood(string s)
     {
-        int sum = nums[0];
-        int bestSum = sum;
-        for (var i = 1; i < nums.Length; i++)
+        var stack = new Stack<char>();
+        stack.Push(s[0]);
+        for (var i = 1; i < s.Length; i++)
         {
-            if (nums[i] > nums[i] + sum)
+            if (stack.Count > 0)
             {
-                sum = nums[i];
+                var previous = stack.Peek();
+                if (char.ToLower(previous) == char.ToLower(s[i]) && previous != s[i])
+                {
+                    stack.Pop();
+                }
+                else
+                {
+                    stack.Push(s[i]);
+                }
             }
             else
             {
-                sum += nums[i];
-            }
-            if (sum > bestSum)
-            {
-                bestSum = sum;
+                stack.Push(s[i]);
             }
         }
-        return bestSum;
+        string cleanString = "";
+        int newSLength = stack.Count;
+        for (var i = 0; i < newSLength; i++)
+        {
+            cleanString = stack.Pop() + cleanString;
+        }
+        return cleanString;
     }
 }
 
