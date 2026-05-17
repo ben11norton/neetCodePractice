@@ -16,12 +16,12 @@ public class Program
             }
         }
         int stackCount = stack.Count();
-        string newString = "";
-        for (var i = 0; i < stackCount; i++)
+        var charArray = new char[stackCount];
+        for (var i = stackCount - 1; i >= 0; i--)
         {
-            newString = stack.Pop() + newString;
+            charArray[i] = stack.Pop();
         }
-        return newString;
+        return new string(charArray);
     }
 }
 
