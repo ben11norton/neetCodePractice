@@ -209,6 +209,16 @@
 
 ![Reverse String](solutionDiagrams/ReverseString.jpg)
 
+<h1>Reverse Vowels of a String</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-ArrayTwoPointers-orange" />
+  <img src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![Reverse Vowels of a String](solutionDiagrams/reverseVowelsOfString.jpg)
+
 <h1>Valid Parenthesis</h1>
 
 <p>
