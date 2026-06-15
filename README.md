@@ -148,6 +148,16 @@
 
 ![Isometric Strings](solutionDiagrams/isometricStrings.jpg)
 
+<h1>Happy Number</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-ArrayHashing-indigo" />
+  <img src="https://img.shields.io/badge/Difficulty-Medium-orange" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![Happy Number](solutionDiagrams/happyNumber.jpg)
+
 <h1>Remove duplicates from sorted array</h1>
 
 <p>
