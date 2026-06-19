@@ -319,6 +319,16 @@
 
 ![Max Points can obtain from card](solutionDiagrams/maxPointsObtainCard.jpg)
 
+<h1>Longest Substring Without Repeating Characters</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-SlidingWindow-red" />
+  <img src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![Longest Substring Without Repeating Characters](solutionDiagrams/longestSubstringWithoutRepeatingCharacters.jpg)
+
 <h1>Remove Nth Node From End of List</h1>
 
 <p>
