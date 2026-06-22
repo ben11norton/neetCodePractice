@@ -68,6 +68,16 @@
 
 ![Move Zeroes](solutionDiagrams/moveZeroes.jpg)
 
+<h1>Majority Element</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-Array-blue" />
+  <img src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![Majority Element](solutionDiagrams/majorityElement.jpg)
+
 <h1>Two Sum</h1>
 
 <p>
