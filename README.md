@@ -189,6 +189,17 @@
 
 ![Word Pattern](solutionDiagrams/wordPattern.jpg)
 
+<h1>Longest Harmonious Subsequence</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-ArrayHashing-indigo" />
+  <img src="https://img.shields.io/badge/Difficulty-Medium-orange" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![Longest Harmonious Subsequence](solutionDiagrams/longestHarmoniousSubsequence.jpg)
+
+
 <h1>Remove duplicates from sorted array</h1>
 
 <p>
