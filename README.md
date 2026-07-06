@@ -281,6 +281,16 @@
 
 ![Remove Duplicates FromAssorted Array 2](solutionDiagrams/RemoveDuplicates_FromAssortedArray2.jpg)
 
+<h1>Assign Cookies</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-ArrayTwoPointers-orange" />
+  <img src="https://img.shields.io/badge/Difficulty-Medium-orange" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![Assign Cookies](solutionDiagrams/assignCookies.jpg)
+
 
 <h1>Valid Parenthesis</h1>
 
