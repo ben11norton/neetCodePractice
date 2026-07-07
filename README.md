@@ -362,6 +362,16 @@
 
 ![Next Greater Element 1](solutionDiagrams/nextGreaterElement1.jpg)
 
+<h1>Remove stars from string</h1>
+
+<p>
+  <img src="https://img.shields.io/badge/Topics-Stack-purple" />
+  <img src="https://img.shields.io/badge/Difficulty-Easy-brightgreen" />
+  <img src="https://img.shields.io/badge/Status-Solved-success" />
+</p>
+
+![Remove stars from string](solutionDiagrams/removeStars.jpg)
+
 <h1>Maximum Average Subarray I</h1>
 
 <p>
