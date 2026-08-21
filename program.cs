@@ -1,15 +1,5 @@
 public class Program
 {
-    public int HammingWeight(int n)
-    {
-        int setBits = 0;
-        while (n > 0)
-        {
-            n = n & (n - 1);
-            setBits++;
-        }
-        return setBits;
-    }
 }
 
 
